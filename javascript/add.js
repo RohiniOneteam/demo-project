@@ -1,9 +1,9 @@
 
-function addtwonum(num1, num2){
+function addtwonum(num1, num2,num3){
 
 
     
-    let sum=num1+num2
+    let sum=num1+num2+num3
     console.log("the result is   : ",sum)
 
 }
