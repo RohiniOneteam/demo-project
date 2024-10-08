@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email and Password Validation</title>
+</head>
+<body>
+
+    <h3>Login</h3>
+
+    <form action="thankyou.txt" method="post">
+        <input type="text" id="em" placeholder="Enter email">
+        <input type="password" id="pass" placeholder="Enter your password">
+        <button type="submit" value="Check" onclick="validation()">Check</button>
+    </form>
+
+    <script>
+        function validation() {
+            const email = document.getElementById("em").value;
+            const password = document.getElementById("pass").value;
+
+            // Regular expression for email validation
+            const emailPattern = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+            
+            // Password validation: at least 8 characters, no spaces, must include at least one letter and one number
+            const passwordPattern = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+
+            if (email === "") {
+                alert("Please enter your email");
+            } else if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address");
+            } else if (password === "") {
+                alert("Please enter your password");
+            } else if (!passwordPattern.test(password)) {
+                alert("Password must be at least 8 characters long and contain at least one letter and one number.");
+            } else {
+                alert("Validation successful!");
+                
+            }
+        }
+    </script>
+    
+</body>
+</html>
